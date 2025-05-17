@@ -1,0 +1,32 @@
+# creating virtual env
+
+python3 -m venv GOquant
+source GOquant/bin/activate
+pip install ipykernel
+python -m ipykernel install --user --name=GOquant --display-name "Python (GOquant)"
+
+
+# Github 
+
+git status
+git add .
+git commit -m "message"
+git push origin main
+
+# Backend
+
+pip3 install fastapi
+pip3 install uvicorn
+
+uvicorn main:app --reload
+
+# Frontend
+
+npm create vite@latest Frontend -- --template react
+cd Frontend
+
+npm install
+
+npm install tailwindcss @tailwindcss/vite
+
+npm run dev
