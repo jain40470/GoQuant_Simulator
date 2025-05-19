@@ -14,7 +14,11 @@ const InputPanel = ({ onSubmit }) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    let newValue = value;
+    if (name === "quantity" || name === "volatility") {
+      newValue = value === "" ? "" : Number(value);
+    }
+    setFormData((prev) => ({ ...prev, [name]: newValue }));
   };
 
   const handleSubmit = (e) => {

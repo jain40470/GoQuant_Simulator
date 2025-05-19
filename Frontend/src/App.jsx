@@ -6,7 +6,7 @@ import './App.css'
 
 const App = () => {
 
-  const [outputData, setOutputData] = useState(null);
+  const [outputData, setOutputData] = useState("null");
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
 
@@ -14,7 +14,8 @@ const App = () => {
     try {
       setLoading(true);
       setErrorMsg('');
-      const response = await axios.post('http://localhost:8000/predict', inputData);
+      const response = await axios.post('http://localhost:8000/simulate', inputData);
+      console.log(response.data)
       setOutputData(response.data);
     } catch (error) {
       console.error('Error fetching output data:', error);
@@ -25,6 +26,7 @@ const App = () => {
     }
   };
 
+  // 
 
   return (
     <>
@@ -39,10 +41,10 @@ const App = () => {
       GoQuant Market Simulator
     </div>
 
-    <div className="bg-green-200 rounded-lg p-6 shadow flex flex-col">
+    <div className="bg-green-100 rounded-lg p-6 shadow flex flex-col">
       <InputPanel onSubmit={handleSubmit} />
     </div>
-    <div className="bg-white rounded-lg p-6 shadow flex flex-col">
+    <div className="bg-green-50 rounded-lg p-6 shadow flex flex-col">
       <OutputPanel data={outputData} />
     </div>
 
