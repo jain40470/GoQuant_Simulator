@@ -42,8 +42,6 @@ const InputPanel = ({ onSubmit }) => {
           <label className="block font-medium">Spot Asset</label>
           <select name="spotAsset" value={formData.spotAsset} onChange={handleChange} className="w-full p-2 border rounded">
             <option value="BTC/USDT">BTC/USDT</option>
-            <option value="ETH/USDT">ETH/USDT</option>
-            <option value="SOL/USDT">SOL/USDT</option>
           </select>
         </div>
 
