@@ -11,6 +11,6 @@ def calculate_market_impact(trade_size_usd: float, alpha: float = 0.001, beta: f
          The estimated market impact (how much price moves)
     """
          
-    return alpha * trade_size_usd + beta * trade_size_usd**2
+    return float(alpha * trade_size_usd + beta * trade_size_usd**2)
 
 

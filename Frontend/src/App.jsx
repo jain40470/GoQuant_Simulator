@@ -19,7 +19,7 @@ const App = () => {
       setOutputData(response.data);
     } catch (error) {
       console.error('Error fetching output data:', error);
-      setErrorMsg('Failed to fetch data from the backend. Please try again.');
+      setErrorMsg("Failed to fetch data from the backend. Please try again" + error);
       setOutputData(null);
     } finally {
       setLoading(false);
@@ -60,6 +60,14 @@ const App = () => {
     >
       &times;
     </button>
+  </div>
+
+  
+)}
+
+{loading && (
+  <div className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-green-300 text-black px-4 py-2 rounded shadow">
+    Loading...
   </div>
 )}
 
