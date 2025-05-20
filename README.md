@@ -91,7 +91,7 @@ This is the backend service for the GoQuant Trading Cost Simulator. It provides 
 
 ## Input Parameters
 
-|----------------------------|----------------------------------------------|
+
 | Parameter      | Description                                              |
 |----------------|----------------------------------------------------------|
 | **Exchange**   | Currently supports: OKX                                  |
@@ -101,10 +101,10 @@ This is the backend service for the GoQuant Trading Cost Simulator. It provides 
 | **Market Side**| Buy or Sell side of the order                            |
 | **Volatility** | Market volatility parameter (see exchange documentation) |
 | **Fee Tier**   | Fee tier based on the exchange's official fee schedule   |
-|----------------|----------------------------------------------------------|
+
 ## Output Parameters
 
-|----------------------------|--------------------------------------------------------|
+
 | Parameter                  |            Description                                 |
 |----------------------------|--------------------------------------------------------|
 | **Expected Slippage**      | Estimated price deviation due to order execution       |               
@@ -113,7 +113,7 @@ This is the backend service for the GoQuant Trading Cost Simulator. It provides 
 | **Net Cost**               | Total cost combining slippage, fees, and impact        |
 | **Maker/Taker Proportion** | Predicted ratio of maker versus taker order fills      |
 | **Internal Latency**       | Processing delay measured                              | 
-|----------------------------|--------------------------------------------------------|
+
 
 
 ## ⚙️ How It Works
