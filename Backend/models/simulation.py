@@ -1,5 +1,4 @@
 import time
-
 from models.market_impact import calculate_market_impact
 from models.slippage import SlippageModel
 from models.maker_taker import MakerTakerModel
@@ -15,15 +14,19 @@ from models.maker_taker import MakerTakerModel
 # marketSide: str
 
 
-def run_simulation(input_data , orderbook):
+import time
+from models.market_impact import calculate_market_impact
+from models.slippage import SlippageModel
+from models.maker_taker import MakerTakerModel
 
+def run_simulation(input_data, orderbook):
     slippage_model = SlippageModel()
     maker_taker_model = MakerTakerModel()
 
     FEE_TIERS = {
-    "Tier 1": {"maker": 0.0002, "taker": 0.0007},
-    "Tier 2": {"maker": 0.00015, "taker": 0.0005},
-    "Tier 3": {"maker": 0.0001, "taker": 0.0003},
+        "Tier 1": {"maker": 0.0002, "taker": 0.0007},
+        "Tier 2": {"maker": 0.00015, "taker": 0.0005},
+        "Tier 3": {"maker": 0.0001, "taker": 0.0003},
     }
 
     start_time = time.time()
@@ -31,17 +34,13 @@ def run_simulation(input_data , orderbook):
     top_bid = orderbook['bids'][0] if orderbook['bids'] else None
     top_ask = orderbook['asks'][0] if orderbook['asks'] else None
   
-    trade_size_usd = input_data.quantity  # already in usd
+    trade_size_usd = input_data["quantity"]  # assuming input_data is dict
 
-    # if not 
-    # exec_price = top_ask[0] if market_side == "buy" else top_bid[0]
-    # trade_size_usd = quantity * exec_price
+    volatility = input_data["volatility"]
+    market_side = input_data["marketSide"].lower()  # "buy" or "sell"
+    order_type = input_data["orderType"].lower()
 
-    volatility = input_data.volatility
-    market_side = input_data.marketSide.lower()  # "buy" or "sell"
-    order_type = input_data.orderType.lower()
-
-    fee_tier = FEE_TIERS.get(input_data.feeTier, FEE_TIERS["Tier 1"])
+    fee_tier = FEE_TIERS.get(input_data["feeTier"], FEE_TIERS["Tier 1"])
     is_taker = order_type == "market"
     fee_rate = fee_tier["taker"] if is_taker else fee_tier["maker"]
 
@@ -50,9 +49,8 @@ def run_simulation(input_data , orderbook):
     elif market_side == 'sell':
         liquidity = sum([float(bid[1]) for bid in orderbook['bids']])
 
-
     slippage = slippage_model.predict_slippage(trade_size_usd, volatility, liquidity)
-    maker_proportion = maker_taker_model.predict_maker_taker(trade_size_usd,volatility,liquidity) 
+    maker_proportion = maker_taker_model.predict_maker_taker(trade_size_usd, volatility, liquidity) 
     market_impact = calculate_market_impact(trade_size_usd)
 
     fees = fee_rate * trade_size_usd
@@ -68,3 +66,4 @@ def run_simulation(input_data , orderbook):
         "makerTakerRatio": float(maker_proportion),
         "internalLatency": float(latency),
     }
+
