@@ -43,7 +43,7 @@ GoQuant_Simulator/
 
 ## 🖥️ Frontend UI
 
-This frontend application, built with **React** and **Vite**, enables users to input trading parameters and view real-time simulations of expected trading costs on the OKX exchange.
+Frontend application built with **React** and **Vite**, enables users to input trading parameters and view real-time simulations of expected trading costs on the OKX exchange.
 
 ## Features
 
@@ -51,9 +51,9 @@ This frontend application, built with **React** and **Vite**, enables users to i
 - Real-time cost simulation results based on advanced financial models.
 - Clear breakdown of costs including slippage, fees, market impact, and more.
 
-# GoQuant_Simulator Backend
+## GoQuant_Simulator/Backend
 
-This is the backend service for the GoQuant Trading Cost Simulator. It provides an API to simulate trading costs based on live order book data fetched via WebSocket.
+Backend provides an API to simulate trading costs based on live order book data fetched via WebSocket.
 
 ## Features
 
