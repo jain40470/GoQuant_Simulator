@@ -181,9 +181,9 @@ npm run dev
 ## 📡 WebSocket Feed
 
 - Source: `wss://ws.gomarket-cpp.goquant.io/ws/l2-orderbook/okx/BTC-USDT-SWAP`
-- Auto reconnect logic built-in
-- Orderbook maintained in-memory for accurate simulation snapshots
-
+- The backend maintains a live Level 2 orderbook snapshot in-memory by continuously consuming this WebSocket feed.
+- Auto reconnect logic is built-in to ensure resilience and data continuity.
+- The orderbook snapshot updates every second, providing accurate, near real-time data for simulations.
 ---
 
 ## 📚 Tech Stack
