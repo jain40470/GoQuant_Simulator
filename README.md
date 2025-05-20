@@ -33,7 +33,7 @@ GoQuant_Simulator/
 ├── frontend/                # React frontend
 │   ├── src/
 │   └── ...
-├── GOquant_Simulator.ipynb  # Jupyter notebook for rough work and prototyping
+├── GOquant_Simulator.ipynb  # Jupyter notebook for rough work.
 ├── README.md
 └── requirements.txt         # Python dependencies 
 
