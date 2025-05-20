@@ -7,12 +7,12 @@ const OutputPanel = ({ data }) => {
       {data ? (
  <ul className="grid grid-cols-1 gap-4 text-lg text-green-900">
  {[
-   { label: 'Slippage :', value: data.slippage },
-   { label: 'Expected Fees :', value: data.fees },
-   { label: 'Market Impact :', value: data.marketImpact },
-   { label: 'Net Cost :', value: data.netCost },
+   { label: 'Slippage :', value: data.slippage + ' USD'},
+   { label: 'Expected Fees :', value: data.fees  + ' USD' },
+   { label: 'Market Impact :', value: data.marketImpact  + ' USD'},
+   { label: 'Net Cost :', value: data.netCost  + ' USD' },
    { label: 'Maker/Taker Proportion :', value: data.makerTakerRatio },
-   { label: 'Internal Latency :', value: data.internalLatency },
+   { label: 'Internal Latency :', value: data.internalLatency  + ' seconds' },
  ].map((item, index) => (
    <li
      key={index}

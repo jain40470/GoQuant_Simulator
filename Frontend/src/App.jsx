@@ -61,7 +61,7 @@ const App = () => {
         className="grid grid-cols-2 gap-8 w-full max-w-6xl"
         style={{ gridTemplateRows: "1fr 6fr" }}
       >
-        <div className="bg-white shadow rounded-lg p-6 flex flex-col justify-center items-center text-green-600 text-2xl font-semibold col-span-2">
+        <div className="bg-white shadow rounded-lg p-6 flex flex-col justify-center items-center text-green-800 text-2xl font-semibold col-span-2">
           GoQuant Market Simulator
         </div>
 

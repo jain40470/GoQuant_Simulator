@@ -6,6 +6,9 @@ from tensorflow.keras.optimizers import Adam
 class MakerTakerModel:
 
     def __init__(self):
+
+        print("I am here at maker taker")
+
         X = np.random.rand(1000, 3)   # b/w 0 to 1
         trade_size = X[:, 0]
         volatility = X[:, 1]
@@ -25,6 +28,9 @@ class MakerTakerModel:
         self.model.fit(X, Y, epochs=100, batch_size=10, verbose=0)
 
     def predict_maker_taker(self, trade_size_usd: float, volatility: float, liquidity: float) -> float:
-        X_input = np.array([[trade_size_usd, volatility, liquidity]])
+        trade_size_scaled = trade_size_usd / (trade_size_usd + 1)  # scales between 0 and 1 for any positive number
+        volatility_scaled = volatility / (volatility + 1)
+        liquidity_scaled = 1 - (liquidity / (liquidity + 1))  #
+        X_input = np.array([[trade_size_scaled, volatility_scaled, liquidity_scaled]])
         pred = self.model.predict(X_input)[0][0]
         return float(pred)

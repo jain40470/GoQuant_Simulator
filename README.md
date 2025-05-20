@@ -2,7 +2,7 @@
 # 🚀 GoQuant Simulator
 
 **GoQuant Simulator** is a real-time modular simulator built to estimate trading costs like slippage, market impact, and maker-taker fee proportions using live orderbook data from the GoQuant WebSocket feed.
-It provides a fast, interactive way to simulate different trade parameters and observe their impact on net cost and execution efficiency.
+It provides a fast, interactive way to simulate different trade parameters and observe their impact on net cost and execution efficiency.The backend streams **continuous real-time simulation updates every second** based on the latest live orderbook snapshots combined with user inputs, enabling highly responsive and realistic trade cost estimations.
 
 
 ## 🧠 Features
@@ -61,6 +61,7 @@ Backend provides an API to simulate trading costs based on live order book data 
 - Handles CORS for seamless integration with frontend apps running locally.
 - Exposes REST API endpoints to accept frontend parameters and return simulation results.
 - Calculates trading cost metrics using advanced models on live market data.
+- Streams real-time continuous simulation updates over a WebSocket endpoint, allowing the frontend to receive live cost metrics every second during the simulation session.
 
 
 ### 🧠 Models Behind the Scenes
@@ -118,6 +119,7 @@ Backend provides an API to simulate trading costs based on live order book data 
 
 ## ⚙️ How It Works
 
+
 ### ✅ Inputs from Frontend
 
 ```json
@@ -134,7 +136,7 @@ Backend provides an API to simulate trading costs based on live order book data 
 
 ## 🧪 Sample Output
 
-Example response from `/simulate` endpoint:
+The backend exposes a WebSocket endpoint at `/ws/simulate` that accepts frontend simulation parameters as JSON and streams real-time simulation updates every second based on live orderbook data.
 
 ```json
 {

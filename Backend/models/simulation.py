@@ -1,3 +1,4 @@
+
 import time
 from models.market_impact import calculate_market_impact
 from models.slippage import SlippageModel
@@ -14,14 +15,7 @@ from models.maker_taker import MakerTakerModel
 # marketSide: str
 
 
-import time
-from models.market_impact import calculate_market_impact
-from models.slippage import SlippageModel
-from models.maker_taker import MakerTakerModel
-
-def run_simulation(input_data, orderbook):
-    slippage_model = SlippageModel()
-    maker_taker_model = MakerTakerModel()
+def run_simulation(input_data, orderbook,maker_taker_model, slippage_model):
 
     FEE_TIERS = {
         "Tier 1": {"maker": 0.0002, "taker": 0.0007},

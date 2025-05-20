@@ -7,7 +7,9 @@ from tensorflow.keras.optimizers import Adam
 class SlippageModel:
 
     def __init__(self):
-     
+
+        print("I am here at Slippage")
+    
         X = np.random.rand(1000, 3)
         trade_size = X[:, 0]
         volatility = X[:, 1]
