@@ -168,7 +168,6 @@ Make sure the frontend is running at one of the allowed origins:
 
 ### 🧩 Frontend Setup
 
-Clone and run the frontend from [Frontend](https://github.com/jain40470/GoQuant_Simulator/Frontend):
 
 ```bash
 git clone https://github.com/jain40470/GoQuant_Simulator/Frontend
