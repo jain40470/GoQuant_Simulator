@@ -4,6 +4,7 @@ import OutputPanel from "./components/OutputPanel";
 import "./App.css";
 
 const App = () => {
+
   const [outputData, setOutputData] = useState(null);
   const [errorMsg, setErrorMsg] = useState("");
   const [loading, setLoading] = useState(false);
@@ -17,8 +18,10 @@ const App = () => {
   }, []);
 
   const handleSubmit = (inputData) => {
+
     setLoading(true);
     setErrorMsg("");
+    
     // Close previous WS if any
     if (wsRef.current) {
       wsRef.current.close();

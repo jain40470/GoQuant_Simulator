@@ -1,0 +1,3 @@
+fast-api
+react
+tensorflow

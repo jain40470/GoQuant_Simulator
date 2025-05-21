@@ -8,3 +8,6 @@ class FrontendData(BaseModel):
     volatility: float
     feeTier: str
     marketSide: str
+
+
+    #
