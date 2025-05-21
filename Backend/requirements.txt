@@ -1,4 +1,4 @@
-fast-api
+fastapi
 websockets
 pydantic 
 numpy
