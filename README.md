@@ -24,7 +24,7 @@ GoQuant_Simulator/
 │   └──services/
 │   ├── websocket_client.py      # WebSocket connector 
 │   └── orderbook_processor.py   # Realtime L2 orderbook snapshot processor     
-|   ├── models/
+|   ├──models/
 │   ├── simulation.py            # Main simulation logic
 │   ├── frontenddata.py          # Pydantic model for incoming simulation request
 │   ├── slippage.py              # DL-based slippage estimator
