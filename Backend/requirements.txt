@@ -1,0 +1,6 @@
+fast-api
+websockets
+pydantic 
+numpy
+time
+tensorflow
