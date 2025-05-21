@@ -1,6 +1,5 @@
 fastapi
 websockets
 pydantic 
-numpy
-time
+numpy>=1.23
 tensorflow
