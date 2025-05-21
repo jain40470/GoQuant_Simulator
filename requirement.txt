@@ -1,3 +1,7 @@
 fastapi
-react
+websockets
+pydantic 
+uvicorn
+numpy>=1.23
 tensorflow
+react
